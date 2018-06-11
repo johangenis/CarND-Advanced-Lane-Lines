@@ -22,7 +22,7 @@
 [image3]: ./binaryImages.png "Binary Examples"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
 [image5]: ./poliFit.png "Fit Visual"
-[image6]: ./examples/example_output.jpg "Output"
+[image6]: ./plottedBackOnOrig.png "Output"
 [video1]: ./project_video_output.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
@@ -77,13 +77,9 @@ I verified that my perspective transform was working as expected by drawing the 
 
 ![alt text][image5]
 
-#### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
+#### 5. I calculated the radius of curvature of the lane and the position of the vehicle with respect to center at 6. Determine the curvature of the lane and vehicle position with respect to center.¶
 
-I did this in lines # through # in my code in `my_other_file.py`
-
-#### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
-
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
+#### 6. I plotted my result back down onto the road such that the lane area is identified clearly, and I implemented this step at heading 7.Warp the detected lane boundaries back onto the original image, in the Advanced-Lane-Lines-P4.ipynb notebook.  Here is an example of my result on a test image:
 
 ![alt text][image6]
 
@@ -91,14 +87,10 @@ I implemented this step in lines # through # in my code in `yet_another_file.py`
 
 ### Pipeline (video)
 
-#### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
-
-Here's a [link to my video result](./project_video_output.mp4)
+#### 1. Here's a [link to my video result](./project_video_output.mp4)
 
 ---
 
 ### Discussion
 
-#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
-
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+#### 1. My pipeline fails in highly contrasting conditions, like heavy shadows (as in the two challenge videos). Should I have time and persue this project further, I will look into Canny Edge detection and refining Sobel.
