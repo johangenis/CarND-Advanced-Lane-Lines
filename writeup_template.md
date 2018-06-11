@@ -21,7 +21,7 @@
 [image2]: ./test_images/test1.jpg "Road Transformed"
 [image3]: ./binaryImages.png "Binary Examples"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
-[image5]: ./examples/color_fit_lines.jpg "Fit Visual"
+[image5]: ./poliFit.png "Fit Visual"
 [image6]: ./examples/example_output.jpg "Output"
 [video1]: ./project_video_output.mp4 "Video"
 
@@ -60,20 +60,7 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 
 #### 3. The code for my perspective transform includes a function called `unwarp()`, which appears at heading 3. Apply a perspective transform to rectify binary image ("birds-eye view"). of the IPython notebook).  The `unwarp()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
 
-```python
-src = np.float32(
-    [[(img_size[0] / 2) - 55, img_size[1] / 2 + 100],
-    [((img_size[0] / 6) - 10), img_size[1]],
-    [(img_size[0] * 5 / 6) + 60, img_size[1]],
-    [(img_size[0] / 2 + 55), img_size[1] / 2 + 100]])
-dst = np.float32(
-    [[(img_size[0] / 4), 0],
-    [(img_size[0] / 4), img_size[1]],
-    [(img_size[0] * 3 / 4), img_size[1]],
-    [(img_size[0] * 3 / 4), 0]])
-```
-
-This resulted in the following source and destination points:
+I hardcoded the following source and destination points:
 
 | Source        | Destination   | 
 |:-------------:|:-------------:| 
@@ -86,9 +73,7 @@ I verified that my perspective transform was working as expected by drawing the 
 
 ![alt text][image4]
 
-#### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
-
-Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
+#### 4. Then I defined a method to fit a polynomial to binary image with lines extracted, using sliding window. The code can be found at heading 5.3 Sliding Window Polyfit - defined and visualized of the accompanying Advanced-Lane-Lines-P4.ipynb notebook.
 
 ![alt text][image5]
 
